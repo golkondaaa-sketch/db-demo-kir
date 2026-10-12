@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тренажёр баз данных</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="pill">Технический руководитель проекта · занятие 12</span>
+    <span class="who">Автор — <b>Кирилл Казарин</b>, в сотрудничестве со Слёрмом и ДИТ Москвы</span>
+  </div>
+  <h1>Тренажёр: базы данных СценыМосквы</h1>
+
+  <div class="grid">
+    <aside class="side">
+      <div class="lbl">Упражнения</div>
+      <nav id="nav"></nav>
+      <div class="progress" id="progress"></div>
+      <div class="howto">
+        <b>Как работать</b>
+        Читайте вводную, правьте запрос или команду в окне и жмите «Выполнить». Проверка — сразу: зелёное «Верно» или подсказка, что не так.<br><br>
+        Сломали данные — «Сбросить базу». У каждой вкладки своя база.<br><br>
+        Всё работает в браузере, интернет не нужен, прогресс сохраняется.
+      </div>
+      <button class="btn ghost small" id="resetDb">↺ Сбросить базу вкладки</button>
+      <button class="btn ghost small" id="resetAll">Начать заново</button>
+    </aside>
+
+    <main>
+      <div id="loading" class="loading">Запускаю базу данных в браузере…</div>
+      <div id="tasks"></div>
+      <section class="sandbox" id="sandbox">
+        <div class="lbl">Песочница — свободные запросы к базе этой вкладки</div>
+        <textarea class="ed" id="sbEd" rows="4" spellcheck="false"></textarea>
+        <div class="bar"><button class="btn run" id="sbRun">▶ Выполнить <small>Ctrl+Enter</small></button></div>
+        <div id="sbOut"></div>
+      </section>
+    </main>
+
+    <aside class="schema" id="side"></aside>
+  </div>
+</div>
+<div class="flash" id="flash"></div>
+<script src="lib/sql-asm.js"></script>
+<script src="js/seed.js"></script>
+<script src="js/redis.js"></script>
+<script src="js/mongo.js"></script>
+<script src="js/viz.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
